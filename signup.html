@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Sign Up</title>
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="admin.js"></script>
+    
+   
+  </head>
+  <body class="bg">
+    <div class="container">
+      <div class="row">
+        <!-- <div class="col-sm-6 col-md-4 col-md-offset-4"> -->
+        <div class="col-md-4">
+          <div class="account-wall">
+            <h1 class="text-center login-title">Sign Up</h1>
+            <p class="text-center">
+              Please fill in this form to create an account!
+            </p>
+            <form class="form-signin" id="inputForm" name="registration">
+              <input
+                type="text"
+                id="userName"
+                name="userName"
+                class="form-control"
+                placeholder="Username"
+                autofocus
+              />
+              <br />
+              <input
+                type="text"
+                id="email"
+                name="email"
+                class="form-control"
+                placeholder="Email Address"
+                autofocus
+              />
+              <br />
+              <input
+                type="password"
+                id="password"
+                name="password"
+                class="form-control"
+                placeholder="Password"
+              />
+              <br />
+              <input
+                type="password"
+                id="confirmPassword"
+                name="confirmPassword"
+                class="form-control"
+                placeholder="Confim Password"
+              />
+              <br />
+              <input
+                type="number"
+                id="phoneNumber"
+                name="phoneNumber"
+                class="form-control"
+                placeholder="Mobile Number"
+              />
+              <br />
+              <div class="gender">
+                <input type="radio" name="type" id="Male" />
+                <label for="Male">Male</label>
+                <input type="radio" name="type" id="Female" />
+                <label for="Female">Female</label>
+              </div>
+              <br />
+              <div class="form-group">
+                <label class="checkbox-inline"
+                  ><input type="checkbox" required="required" />
+                  <span style="font-size: 14px"
+                    >I accept the
+                    <a data-toggle="modal" data-target="#myModal" href="#"
+                      >Terms of Use</a
+                    >
+                    &amp; <a data-toggle="modal" data-target="#myModalP" href="#">Privacy Policy</a></span
+                  ></label
+                >
+              </div>
+              <!-- <button>Add this title</button> -->
+              <button class="btn btn-lg btn-primary btn-block" type="submit">
+                Sign Up
+              </button>
+              <br />
+              <span class="need-help text-center" style="font-size: 15px"
+                >Already have an account?</span
+              ><a href="index.html"> Login here </a
+              ><span class="clearfix"></span>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Terms of Use</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              lacus lorem, sagittis ut urna non, venenatis tristique lacus.
+              Vestibulum eget efficitur libero. Fusce dapibus scelerisque urna.
+              Aenean iaculis in justo a dapibus. Nullam hendrerit ligula dolor,
+              sed luctus dolor accumsan eu. Sed gravida non nibh sit amet
+              elementum. Morbi lobortis libero at feugiat volutpat. Proin ut
+              ligula ultrices, commodo lacus nec, bibendum lectus. Sed auctor
+              eros nec vestibulum aliquet.
+            </p>
+            <p>
+              Nunc mauris nibh, laoreet sit amet tempor ac, dapibus ut ante.
+              Nunc non ligula aliquet, rutrum orci eu, efficitur urna. Proin
+              scelerisque metus finibus, pharetra nulla sed, porttitor nunc.
+              Cras rutrum non felis ac semper. Donec venenatis, turpis at
+              euismod tempus, ante dui fermentum libero, non mattis nibh arcu
+              eget sapien. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus. Sed ornare scelerisque purus, vitae fringilla lorem
+              blandit sed. Mauris eu lectus odio. Nulla id eleifend orci. Nam
+              efficitur dolor ut velit gravida, quis semper nulla facilisis.
+              Aliquam elementum viverra massa. Pellentesque pretium sem eget
+              tempus lacinia. Nulla varius semper magna nec porta. Fusce sem
+              enim, consectetur ornare diam et, volutpat hendrerit massa.
+              Suspendisse vel augue eget mi aliquam luctus vel quis arcu. Nulla
+              consectetur hendrerit eros in rutrum.
+            </p>
+            <p>
+              Sed diam libero, mattis nec turpis sit amet, ultricies eleifend
+              justo. Nam mi arcu, ornare in egestas vitae, volutpat a velit. Ut
+              faucibus vulputate magna id faucibus. Aliquam dapibus hendrerit
+              leo, a aliquam augue cursus nec. Proin eget tellus tempus,
+              ultricies risus in, egestas orci. Sed varius finibus neque.
+              Maecenas porttitor efficitur tempor. Proin ligula massa,
+              scelerisque ac mauris non, bibendum cursus nunc. Interdum et
+              malesuada fames ac ante ipsum primis in faucibus. Vivamus nec
+              risus non velit faucibus efficitur eu non libero. Donec sagittis
+              purus blandit, varius ante et, congue sem. Pellentesque erat
+              lorem, rutrum eget odio non, varius feugiat dolor. Integer viverra
+              quis dui id maximus. Sed eget gravida justo. Suspendisse eu
+              imperdiet erat. vitae fringilla lorem blandit sed. Mauris odio.
+            </p>
+            <p>
+              Sed ac quam elit. Nam lacus quam, tempor sed consectetur eget,
+              vulputate in ipsum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Etiam facilisis quam et
+              velit scelerisque vestibulum pulvinar in lectus. Nam in enim in
+              nunc varius pulvinar. Mauris varius neque non turpis blandit
+              dapibus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="myModalP" role="dialog">
+      <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">
+              &times;
+            </button>
+            <h4 class="modal-title">Privacy Policy</h4>
+          </div>
+          <div class="modal-body">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras
+              lacus lorem, sagittis ut urna non, venenatis tristique lacus.
+              Vestibulum eget efficitur libero. Fusce dapibus scelerisque urna.
+              Aenean iaculis in justo a dapibus. Nullam hendrerit ligula dolor,
+              sed luctus dolor accumsan eu. Sed gravida non nibh sit amet
+              elementum. Morbi lobortis libero at feugiat volutpat. Proin ut
+              ligula ultrices, commodo lacus nec, bibendum lectus. Sed auctor
+              eros nec vestibulum aliquet.
+            </p>
+            <p>
+              Nunc mauris nibh, laoreet sit amet tempor ac, dapibus ut ante.
+              Nunc non ligula aliquet, rutrum orci eu, efficitur urna. Proin
+              scelerisque metus finibus, pharetra nulla sed, porttitor nunc.
+              Cras rutrum non felis ac semper. Donec venenatis, turpis at
+              euismod tempus, ante dui fermentum libero, non mattis nibh arcu
+              eget sapien. Interdum et malesuada fames ac ante ipsum primis in
+              faucibus. Sed ornare scelerisque purus, vitae fringilla lorem
+              blandit sed. Mauris eu lectus odio. Nulla id eleifend orci. Nam
+              efficitur dolor ut velit gravida, quis semper nulla facilisis.
+              Aliquam elementum viverra massa. Pellentesque pretium sem eget
+              tempus lacinia. Nulla varius semper magna nec porta. Fusce sem
+              enim, consectetur ornare diam et, volutpat hendrerit massa.
+              Suspendisse vel augue eget mi aliquam luctus vel quis arcu. Nulla
+              consectetur hendrerit eros in rutrum.
+            </p>
+            <p>
+              Sed diam libero, mattis nec turpis sit amet, ultricies eleifend
+              justo. Nam mi arcu, ornare in egestas vitae, volutpat a velit. Ut
+              faucibus vulputate magna id faucibus. Aliquam dapibus hendrerit
+              leo, a aliquam augue cursus nec. Proin eget tellus tempus,
+              ultricies risus in, egestas orci. Sed varius finibus neque.
+              Maecenas porttitor efficitur tempor. Proin ligula massa,
+              scelerisque ac mauris non, bibendum cursus nunc. Interdum et
+              malesuada fames ac ante ipsum primis in faucibus. Vivamus nec
+              risus non velit faucibus efficitur eu non libero. Donec sagittis
+              purus blandit, varius ante et, congue sem. Pellentesque erat
+              lorem, rutrum eget odio non, varius feugiat dolor. Integer viverra
+              quis dui id maximus. Sed eget gravida justo. Suspendisse eu
+              imperdiet erat. vitae fringilla lorem blandit sed. Mauris odio.
+            </p>
+            <p>
+              Sed ac quam elit. Nam lacus quam, tempor sed consectetur eget,
+              vulputate in ipsum. Vestibulum ante ipsum primis in faucibus orci
+              luctus et ultrices posuere cubilia curae; Etiam facilisis quam et
+              velit scelerisque vestibulum pulvinar in lectus. Nam in enim in
+              nunc varius pulvinar. Mauris varius neque non turpis blandit
+              dapibus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<script>
+const submit = function () {
+  event.preventDefault();
+  let userName = document.getElementById("userName").value;
+  let email = document.getElementById("email").value;
+  let password = document.getElementById("password").value;
+  let confirmPassword = document.getElementById("confirmPassword").value;
+  let phoneNumber = document.getElementById("phoneNumber").value;
+  let typeMale = document.getElementById("Male").checked;
+  let typeFemale = document.getElementById("Female").checked;
+
+  if (userName == null || userName == undefined || userName == "") {
+    alert("Please enter User name.");
+    document.registration.userName.focus();
+    return false;
+  } else if (email == null || email == undefined || email == "") {
+    alert("Please enter Email.");
+    document.registration.email.focus();
+    return false;
+  } else if (password == null || password == undefined || password == "") {
+    alert("Please enter Password.");
+    document.registration.password.focus();
+    return false;
+  } else if (password.length < 6) {
+    alert("Password length should be minimum 6 digit.");
+    document.registration.password.focus();
+    return false;
+  } else if (confirmPassword == null || confirmPassword == undefined || confirmPassword == "") {
+    alert("Please enter Confirm Password.");
+    document.registration.confirmPassword.focus();
+    return false;
+  }else if (confirmPassword != password) {
+    alert("Password and confirm password is not matching.");
+    document.registration.confirmPassword.focus();
+    return false;
+  }else if (
+    phoneNumber == null ||
+    phoneNumber == undefined ||
+    phoneNumber == "" || (phoneNumber.length != 10)
+  ) {
+    alert("Please enter 10 digit Mobile Number..");
+    document.registration.phoneNumber.focus();
+    return false;
+  } else if (typeMale === false && typeFemale === false) {
+    alert("Pick male or female.");
+    return false;
+  }
+
+  let typeGender;
+   typeMale === false && typeFemale === false ? alert("Pick male or female.") : (typeMale === false) ? typeGender = "Female" : typeGender = "Male";
+
+  addNewShow(userName, typeGender, email, password, confirmPassword, phoneNumber);
+};
+function addNewShow(userName, typeGender, email, password, confirmPassword, phoneNumber) {
+  let showList = JSON.parse(localStorage.getItem("showList") || "[]");
+
+  let show = {
+    userName: userName,
+    typeGender: typeGender,
+    email: email,
+    password: password,
+    confirmPassword: confirmPassword,
+    phoneNumber: phoneNumber
+  };
+  showList.push(show);
+  console.log(showList);
+  localStorage.setItem("showList", JSON.stringify(showList));
+}
+
+let formData = document.getElementById("inputForm");
+formData.addEventListener("submit", submit, false);
+
+</script>
+
+  </body>
+</html>
