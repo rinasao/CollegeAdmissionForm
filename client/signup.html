@@ -98,7 +98,7 @@
               <br />
               <span class="need-help text-center" style="font-size: 15px"
                 >Already have an account?</span
-              ><a href="index.html"> Login here </a
+              ><a href="signin.html"> Login here </a
               ><span class="clearfix"></span>
             </form>
           </div>
@@ -301,6 +301,7 @@ function addNewShow(userName, typeGender, email, password, confirmPassword, phon
   showList.push(show);
   console.log(showList);
   localStorage.setItem("showList", JSON.stringify(showList));
+  window.location="http://localhost:9000/admission-form.html"
 }
 
 let formData = document.getElementById("inputForm");
