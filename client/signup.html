@@ -70,6 +70,7 @@
                 name="phoneNumber"
                 class="form-control"
                 placeholder="Mobile Number"
+                onKeyPress="if(this.value.length==10) return false;"
               />
               <br />
               <div class="gender">
@@ -302,7 +303,6 @@ function addNewShow(userName, typeGender, email, password, confirmPassword, phon
   console.log(showList);
   localStorage.setItem("showList", JSON.stringify(showList));
 
-
   fetch('http://localhost:9000/user/register',{
  method:'post',
  headers: {
@@ -313,10 +313,10 @@ function addNewShow(userName, typeGender, email, password, confirmPassword, phon
  }).then(function(response){
  return response.json()
  }).then(function(data){
- console.log(">>>>>>>>", data)
+ console.log(">>>>>>>>>>", data)
  })
 
-  window.location="http://localhost:9000/admission-form.html"
+  // window.location="http://localhost:9000/admission-form.html"
 }
 
 let formData = document.getElementById("inputForm");

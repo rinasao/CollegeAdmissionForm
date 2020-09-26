@@ -5,6 +5,7 @@ const server = express();
 
 server.use(bodyparser.json())
 server.use(express.static(__dirname + '/client'))
+server.use(require('./routes'))
 server.get('/', function(req, res){
     console.log("base route");
     res.sendFile(__dirname+'/client/home.html')
