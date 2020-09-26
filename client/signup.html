@@ -301,6 +301,21 @@ function addNewShow(userName, typeGender, email, password, confirmPassword, phon
   showList.push(show);
   console.log(showList);
   localStorage.setItem("showList", JSON.stringify(showList));
+
+
+  fetch('http://localhost:9000/user/register',{
+ method:'post',
+ headers: {
+ 'Accept': 'application/json',
+ 'Content-Type': 'application/json'
+ },
+ body:JSON.stringify(show)
+ }).then(function(response){
+ return response.json()
+ }).then(function(data){
+ console.log(">>>>>>>>", data)
+ })
+
   window.location="http://localhost:9000/admission-form.html"
 }
 
