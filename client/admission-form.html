@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admission Form</title>
+    <!-- Add icon library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <script src="js/admissionForm.js"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand"
+          ><img class="brandl" src="images/logo.png"
+        /></a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div
+          id="navbarCollapse"
+          class="collapse navbar-collapse justify-content-start"
+        >
+          <!-- <form class="navbar-form form-inline">
+          <div class="input-group search-box">
+            <input
+              type="text"
+              id="search"
+              class="form-control"
+              placeholder="Search here..."
+            />
+            <span class="input-group-addon"
+              ><i class="material-icons">&#xE8B6;</i></span
+            >
+          </div>
+        </form> -->
+          <div class="navbar-nav ml-auto">
+            <a href="#" class="nav-item nav-link"><span>Home</span></a>
+            <a href="#" class="nav-item nav-link"><span>About</span></a>
+            <a href="#" class="nav-item nav-link"><span>Academics</span></a>
+            <a href="#" class="nav-item nav-link"><span>Research</span></a>
+            <a href="#" class="nav-item nav-link"
+              ><span>Administration</span></a
+            >
+            <a href="#" class="nav-item nav-link"><span>E-Learning</span></a>
+            <!-- <a href="#" class="nav-item nav-link"
+          ><span>Feedback</span></a
+        >
+      <a href="#" class="nav-item nav-link"
+      ><span>Contact</span></a
+    > -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                data-toggle="dropdown"
+                class="nav-item nav-link dropdown-toggle user-action"
+                ><img
+                  src="images/profilepicture.jpg"
+                  class="avatar"
+                  alt="Avatar" />
+                Rina Sao <b class="caret"></b
+              ></a>
+              <!-- https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120 -->
+              <div class="dropdown-menu">
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-user" aria-hidden="true"></i> Profile</a
+                >
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-calendar-o"></i> Calendar</a
+                >
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-sliders"></i> Settings</a
+                >
+                <div class="divider dropdown-divider"></div>
+                <a href="index.html" class="dropdown-item"
+                  ><i class="material-icons">&#xE8AC;</i> Logout</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="innerpage-bg">
+      <h2
+        style="
+          text-align: center;
+          color: #fff;
+          font-size: 40px;
+          text-transform: uppercase;
+        "
+      >
+        Admission Form 2020-21
+      </h2>
+    </div>
+
+    <div style="position: relative; margin-top: -150px">
+      <div class="container upstrip">
+        <br />
+        <form
+          data-toggle="validator"
+          action="admission-form2.html"
+          name="forms"
+          onSubmit="return validate(this.form)"
+        >
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Student Name"
+                    name="firstName"
+                    required
+                  />
+                  <!-- <span class="errorname">    </span> -->
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Father's Name"
+                    name="fatherName"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+                <!-- <span class="errorname">    </span> -->
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Mother's Name"
+                    name="motherName"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-phone-square icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    onKeyPress="if(this.value.length==10) return false;"
+                    placeholder="Student's Mobile No."
+                    name="studentMobile"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-phone-square icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    onKeyPress="if(this.value.length==10) return false;"
+                    placeholder="Father's Mobile No."
+                    name="fatherMobile"
+                  />
+                </div>
+              </div>
+              <div class="col form-group">
+                <div class="input-container">
+                  <i class="fa fa-envelope icon"></i>
+                  <input
+                    class="form-control"
+                    type="email"
+                    placeholder="Email Id"
+                    name="emailId"
+                    required
+                    aria-required="true"
+                  />
+                  <div class="help-block with-errors"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-calendar icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    onfocus="(this.type='date')"
+                    placeholder="Date of Birth"
+                    name="birthDate"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-id-card icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    onKeyPress="if(this.value.length==12) return false;"
+                    placeholder="Aadhaar Card No."
+                    name="adhaarCardNo"
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Place of Birth "
+                    name="placeBirth"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <select class="form-control" required aria-required="true">
+                    <option>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <select class="form-control">
+                    <option>Select Religion</option>
+                    <option value="40">Buddhist</option>
+                    <option value="31">Christian-Catholic</option>
+                    <option value="32">Christian-Orthodox</option>
+                    <option value="34">Christian-Others</option>
+                    <option value="33">Christian-Protestant</option>
+                    <option value="27">Hindu</option>
+                    <option value="41">Inter-Religion</option>
+                    <option value="36">Jain-Digambar</option>
+                    <option value="38">Jain-Others</option>
+                    <option value="37">Jain-Shwetambar</option>
+                    <option value="30">Muslim-Others</option>
+                    <option value="28">Muslim-shia</option>
+                    <option value="29">Muslim-Sunni</option>
+                    <option value="43">No Religan Belief</option>
+                    <option value="39">Parsi</option>
+                    <option value="35">Sikh</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <select class="form-control">
+                    <option>Select Category</option>
+                    <option value="OPEN">OPEN</option>
+                    <option value="Sikhism">OBC</option>
+                    <option value="SC">SC</option>
+                    <option value="ST">ST</option>
+                    <option value="Jainism">NT</option>
+                    <option value="Other">Other</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Cast "
+                    name="cast"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    placeholder="Mother's Tongue"
+                    name="motherTongue"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-map-marker icon"></i>
+                  <textarea style="width: 100%" rows="6" placeholder="Address">
+                  </textarea>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-map-marker icon"></i>
+                  <!-- <select class="form-control">
+                    <option>State</option>
+                    <option value="Andra Pradesh">Andra Pradesh</option>
+                    <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                    <option value="Arunachal Pradesh">Assam</option>
+                    <option value="Bihar">Bihar</option>
+                    <option value="Chhattisgarh">Chhattisgarh</option>
+                    <option value="Goa">Goa</option>
+                    <option value="Gujarat">Gujarat</option>
+                    <option value="Haryana">Haryana</option>
+                    <option value="Himachal Pradesh">Himachal Pradesh</option>
+                  </select> -->
+                  <select
+                    class="form-control"
+                    id="slct1"
+                    name="slct1"
+                    onchange="populate(this.id,'slct2')"
+                  >
+                    <option>State</option>
+                    <option value="AndamanandNicobar">Andaman & Nicobar</option>
+                    <option value="AndhraPradesh">Andhra Pradesh</option>
+                    <option value="ArunachalPradesh">Arunachal Pradesh</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <i class="fa fa-map-marker icon"></i>
+                  <!-- <select class="form-control">
+                    <option>City</option>
+                    <option value="Mumbai">Mumbai</option>
+                    <option value="Delhi">Delhi</option>
+                    <option value="Bangalore">Bangalore</option>
+                    <option value="Hyderabad">Hyderabad</option>
+                    <option value="Ahmedabad">Ahmedabad</option>
+                    <option value="Chennai">Chennai</option>
+                    <option value="Kolkata">Kolkata</option>
+                  </select> -->
+                  <select class="form-control" id="slct2" name="slct2">
+                    <option>City</option>
+                  </select>
+                </div>
+                <div class="input-container">
+                  <i class="fa fa-map-marker icon"></i>
+                  <input
+                    class="input-field"
+                    type="tel"
+                    pattern="[0-9]*"
+                    placeholder="Zip Code"
+                    onKeyPress="if(this.value.length==6) return false; "
+                    required
+                    aria-required="true"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <br />
+            <div class="row">
+              <div class="col">
+                <!-- <button type="button" class="btn btn-warning">Submit</button> -->
+                <!-- <input type="submit" value="Submit"> -->
+                <div align="center">
+                  <button type="submit" class="btn btn-primary btn-xs">
+                    Continue...
+                  </button>
+                </div>
+              </div>
+              <!-- <div class="col">
+        </div> -->
+            </div>
+            <br />
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- </div> -->
+
+    <footer class="footer">
+      <div class="container bottom_border">
+        <div class="row">
+          <div class="col-sm-4 col-md col-sm-4 col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Find us</h5>
+            <!--headin5_amrc-->
+            <p class="mb10">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s
+            </p>
+            <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35</p>
+            <p><i class="fa fa-phone"></i> +91-9999878398</p>
+            <p><i class="fa fa fa-envelope"></i> info@example.com</p>
+          </div>
+
+          <div class="col-sm-4 col-md col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+            <!--headin5_amrc-->
+            <ul class="footer_ul_amrc">
+              <li><a href="http://webenlance.com">Image Rectoucing</a></li>
+              <li><a href="http://webenlance.com">Clipping Path</a></li>
+              <li><a href="http://webenlance.com">Hollow Man Montage</a></li>
+              <li><a href="http://webenlance.com">Ebay & Amazon</a></li>
+              <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+              <li><a href="http://webenlance.com">Image Cropping</a></li>
+            </ul>
+            <!--footer_ul_amrc ends here-->
+          </div>
+
+          <div class="col-sm-4 col-md col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+            <!--headin5_amrc-->
+            <ul class="footer_ul_amrc">
+              <li><a href="http://webenlance.com">Remove Background</a></li>
+              <li>
+                <a href="http://webenlance.com">Shadows & Mirror Reflection</a>
+              </li>
+              <li><a href="http://webenlance.com">Logo Design</a></li>
+              <li><a href="http://webenlance.com">Vectorization</a></li>
+              <li><a href="http://webenlance.com">Hair Masking/Clipping</a></li>
+              <li><a href="http://webenlance.com">Image Cropping</a></li>
+            </ul>
+            <!--footer_ul_amrc ends here-->
+          </div>
+
+          <div class="col-sm-4 col-md col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Follow us</h5>
+            <!--headin5_amrc ends here-->
+
+            <ul class="footer_ul2_amrc">
+              <li>
+                <a href="#"
+                  ><i class="fab fa-twitter fleft padding-right"></i>
+                </a>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing...<a href="#"
+                    >https://www.lipsum.com/</a
+                  >
+                </p>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fab fa-twitter fleft padding-right"></i>
+                </a>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing...<a href="#"
+                    >https://www.lipsum.com/</a
+                  >
+                </p>
+              </li>
+              <li>
+                <a href="#"
+                  ><i class="fab fa-twitter fleft padding-right"></i>
+                </a>
+                <p>
+                  Lorem Ipsum is simply dummy text of the printing...<a href="#"
+                    >https://www.lipsum.com/</a
+                  >
+                </p>
+              </li>
+            </ul>
+            <!--footer_ul2_amrc ends here-->
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+          <li><a href="http://webenlance.com">Home</a></li>
+          <li><a href="http://webenlance.com">About</a></li>
+          <li><a href="http://webenlance.com">Services</a></li>
+          <li><a href="http://webenlance.com">Pricing</a></li>
+          <li><a href="http://webenlance.com">Blog</a></li>
+          <li><a href="http://webenlance.com">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">
+          Copyright @2020 | Designed With by
+          <a href="hcl.com">HCL Technologies Ltd.</a>
+        </p>
+
+        <ul class="social_footer_ul">
+          <li>
+            <a href="http://facbook.com"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="http://twitter.com"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="http://linkedin.com"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="http://instagram.com"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <!--social_footer_ul ends here-->
+      </div>
+    </footer>
+
+    <script type="text/javascript">
+      function populate(s1, s2) {
+        var s1 = document.getElementById(s1);
+        var s2 = document.getElementById(s2);
+        s2.innerHTML = " ";
+
+        if (s1.value == "AndamanandNicobar") {
+          var optionArray = [
+            "|",
+            "bambooFlat|Bamboo Flat",
+            "garacharma|Garacharma",
+            "portBlair|Port Blair",
+            "prothrapur|Prothrapur",
+          ];
+        } else if (s1.value == "AndhraPradesh") {
+          var optionArray = [
+            "|",
+            "adoni|Adoni",
+            "amaravati|Amaravati",
+            "anantapuram|Anantapuram",
+            "bhimavaram|Bhimavaram",
+            "chilakaluripet|Chilakaluripet",
+            "chirala|Chirala",
+            "chittoor|Chittoor",
+            "dharmavaram|Dharmavaram",
+            "eluru|Eluru",
+            "gudivada|Gudivada",
+            "guntakal|Guntakal",
+            "guntur|Guntur",
+            "hindupur|Hindupur",
+            "kadapa|Kadapa",
+            "kakinada|Kakinada",
+            "kurnool|Kurnool",
+            "machilipatnam|Machilipatnam",
+            "madanapalle|Madanapalle",
+            "mangalagiri|Mangalagiri",
+            "nandyal|Nandyal",
+            "narasaraopet|Narasaraopet",
+            "nellore|Nellore",
+            "ongole|Ongole",
+            "proddatur|Proddatur",
+            "Rajamahendravaram|Rajamahendravaram",
+            "srikakulam|Srikakulam",
+            "tadepalligudem|Tadepalligudem",
+            "tadipatri|Tadipatri",
+            "tenali|Tenali",
+            "tirupati|Tirupati",
+            "vijayawada|Vijayawada",
+            "Visakhapatnam|Visakhapatnam",
+            "vizianagaram|Vizianagaram",
+          ];
+        } else if (s1.value == "ArunachalPradesh") {
+          var optionArray = [
+            "|",
+            "aalo|Aalo",
+            "anini|Anini",
+            "basar|Basar",
+            "boleng|Boleng",
+            "bomdila|Bomdila",
+            "Changlang|Changlang",
+            "daporijo|Daporijo",
+            "deomali|Deomali",
+            "dirang|Dirang",
+            "hawai|Hawai",
+            "itanagar|Itanagar",
+            "jairampur|Jairampur",
+            "khonsa|Khonsa",
+            "koloriang|Koloriang",
+            "longding|Longding",
+            "miao|Miao",
+            "naharlagun|Naharlagun",
+            "namsai|Namsai",
+            "pasighat|Pasighat",
+            "roing|Roing",
+            "rupa|Rupa",
+            "sagalee|Sagalee",
+            "seppa|Seppa",
+            "tawang|Tawang",
+            "tezu|Tezu",
+            "yingkiong|Yingkiong",
+            "ziro|Ziro"
+          ];
+        }
+	
+        for (var option in optionArray) {
+          var pair = optionArray[option].split("|");
+          var newOption = document.createElement("option");
+          newOption.value = pair[0];
+          newOption.innerHTML = pair[1];
+          s2.options.add(newOption);
+        }
+      }
+    </script>
+  </body>
+</html>
