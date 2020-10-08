@@ -171,7 +171,8 @@ body {font-family: Arial, Helvetica, sans-serif; background-color: rgb(228, 224,
     }
     .account-wall
     {
-        margin-top: 60px;
+      /* margin-top: 60px; */
+        margin-top: 0px;
         padding: 20px 0px 20px 0px;
         background-color: #f7f7f7;
         -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
@@ -221,9 +222,9 @@ body {font-family: Arial, Helvetica, sans-serif; background-color: rgb(228, 224,
     }
     span.create-user-btn{
       background:#ddd; color:#fff; 
-      padding:6px 0px;
-      font-size: 14px;
-    }
+      padding:10px 0px;
+      font-size: 12px;
+      }
 
     .innerpage-bg {
       background-color: #000;

@@ -1,220 +1,581 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>JavaScript Project</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admission Form</title>
     <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.js"></script>
-    <script src="js/admissionForm.js"></script>
-</head>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
+      crossorigin="anonymous"
+    />
+    <script src="admissionForm.js"></script>
+  </head>
 
-<body>
-    <div class="innerpage-bg">
-        <h2 style="text-align: center; color: #fff; font-size: 50px; text-transform: uppercase;">Admission Form 2020-21
-        </h2>
-    </div>
-
-    <div style="position: relative; margin-top: -150px;">
-        <div class="container upstrip">
-            <br>
-            <form data-toggle="validator" name="forms" onSubmit="return validate(this.form)">
-                <div class="form-group">
-                    <div class="row">
-                        <div class="col">
-                            <div class="input-container">
-                                <input type="file" class="custom-file-input" accept="image/*" class="file"
-                                    onchange="loadFile(event)" name="photo">
-                                <label class="custom-file-label" for="file">Upload Photo...</label>
-                            </div>
-                            <p><img id="photo" width="200" /></p>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <input type="file" class="custom-file-input" accept="image/*" class="file"
-                                    onchange="uploadSignature(event)" name="signature">
-                                <label class="custom-file-label" for="file">Upload Signature...</label>
-                            </div>
-                            <p><img id="signature" width="200" /></p>
-                        </div>
-                    </div>
-                    <h6>Education Details:</h6>
-                    <div class="row">
-                        <div class="col">
-                            <div class="input-container">
-                                <input disabled class="input-field input-lavel" type="text" placeholder="Class: 10th "
-                                    name="class">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <select class="form-control">
-                                    <option>Board</option>
-                                    <option value="Board of School Education Uttarakhand, Nainital">Board of School
-                                        Education Uttarakhand,
-                                        Nainital</option>
-                                    <option value="Board of Secondary Education Andhra Pradesh, Hyderabad ">Board of
-                                        Secondary Education
-                                        Andhra Pradesh, Hyderabad </option>
-                                    <option value="Board of Secondary Education Rajasthan, Ajmer">Board of Secondary
-                                        Education Rajasthan,
-                                        Ajmer</option>
-                                    <option value="Board of Secondary Education, Madhya Pradesh, Bhopal">Board of
-                                        Secondary Education,
-                                        Madhya Pradesh, Bhopal</option>
-                                    <option value="Central Agricultural University, Manipur ">Central Agricultural
-                                        University, Manipur
-                                    </option>
-                                    <option value="Central Board of Secondary Education, Delhi">Central Board of
-                                        Secondary Education, Delhi
-                                    </option>
-                                    <option value="Central University of Bihar, Patna">Central University of Bihar,
-                                        Patna</option>
-                                    <option value="Central Institute of Fisheries Education, Mumbai">Central Institute
-                                        of Fisheries
-                                        Education, Mumbai</option>
-                                    <option value="Savitribai Phule Pune University">Savitribai Phule Pune University
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="Subject " name="subject">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-calendar icon"></i>
-                                <input class="input-field" type="text" onfocus="(this.type='date')"
-                                    placeholder="Year of passing" name="passingYear">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="Marks" name="marks">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="%" name="percentage">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col">
-                            <div class="input-container">
-                                <input disabled class="input-field input-lavel" type="text" placeholder="Class: 12th "
-                                    name="class">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <select class="form-control">
-                                    <option>Board</option>
-                                    <option value="Board of School Education Uttarakhand, Nainital">Board of School
-                                        Education Uttarakhand,
-                                        Nainital</option>
-                                    <option value="Board of Secondary Education Andhra Pradesh, Hyderabad ">Board of
-                                        Secondary Education
-                                        Andhra Pradesh, Hyderabad </option>
-                                    <option value="Board of Secondary Education Rajasthan, Ajmer">Board of Secondary
-                                        Education Rajasthan,
-                                        Ajmer</option>
-                                    <option value="Board of Secondary Education, Madhya Pradesh, Bhopal">Board of
-                                        Secondary Education,
-                                        Madhya Pradesh, Bhopal</option>
-                                    <option value="Central Agricultural University, Manipur ">Central Agricultural
-                                        University, Manipur
-                                    </option>
-                                    <option value="Central Board of Secondary Education, Delhi">Central Board of
-                                        Secondary Education, Delhi
-                                    </option>
-                                    <option value="Central University of Bihar, Patna">Central University of Bihar,
-                                        Patna</option>
-                                    <option value="Central Institute of Fisheries Education, Mumbai">Central Institute
-                                        of Fisheries
-                                        Education, Mumbai</option>
-                                    <option value="Savitribai Phule Pune University">Savitribai Phule Pune University
-                                    </option>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="Subject " name="subject">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-calendar icon"></i>
-                                <input class="input-field" type="text" onfocus="(this.type='date')"
-                                    placeholder="Year of passing" name="passingYear">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="Marks" name="marks">
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-user icon"></i>
-                                <input class="input-field" type="text" placeholder="%" name="percentage">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="input-container">
-                                <input type="file" class="custom-file-input" name="tenthDocumnet">
-                                <label class="custom-file-label" for="tenthDocumnet">Upload 10th documnet...</label>
-                            </div>
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <input type="file" class="custom-file-input" name="twelthDocument">
-                                <label class="custom-file-label" for="twelthDocument">Upload 12th document...</label>
-                            </div>
-                        </div>
-                    </div>
-                    <h6>Payment Gateway:</h6>
-                    <div class="row">
-                        <div class="col">
-                            <img src="images/payment.png" width="450px" />
-                        </div>
-                        <div class="col">
-                            <div class="input-container">
-                                <i class="fa fa-envelope icon"></i>
-                                <input class="input-field" type="text" placeholder="Transaction Id"
-                                    name="transactionId">
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <div align="center"> <button type="submit" class="btn btn-primary btn-xs">Submit</button>
-                            </div>
-                        </div>
-                    </div>
-                    <br>
-                </div>
-            </form>
+  <body>
+    <nav class="navbar navbar-expand-xl navbar-dark">
+      <div class="container">
+        <a href="#" class="navbar-brand"
+          ><img class="brandl" src="images/logo.png"
+        /></a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-toggle="collapse"
+          data-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- Collection of nav links, forms, and other content for toggling -->
+        <div
+          id="navbarCollapse"
+          class="collapse navbar-collapse justify-content-start"
+        >
+          <!-- <form class="navbar-form form-inline">
+          <div class="input-group search-box">
+            <input
+              type="text"
+              id="search"
+              class="form-control"
+              placeholder="Search here..."
+            />
+            <span class="input-group-addon"
+              ><i class="material-icons">&#xE8B6;</i></span
+            >
+          </div>
+        </form> -->
+          <div class="navbar-nav ml-auto">
+            <a href="#" class="nav-item nav-link"><span>Home</span></a>
+            <a href="#" class="nav-item nav-link"><span>About</span></a>
+            <a href="#" class="nav-item nav-link"><span>Academics</span></a>
+            <a href="#" class="nav-item nav-link"><span>Research</span></a>
+            <a href="#" class="nav-item nav-link"
+              ><span>Administration</span></a
+            >
+            <a href="#" class="nav-item nav-link"><span>E-Learning</span></a>
+            <!-- <a href="#" class="nav-item nav-link"
+          ><span>Feedback</span></a
+        >
+      <a href="#" class="nav-item nav-link"
+      ><span>Contact</span></a
+    > -->
+            <div class="nav-item dropdown">
+              <a
+                href="#"
+                data-toggle="dropdown"
+                class="nav-item nav-link dropdown-toggle user-action"
+                ><img
+                  src="images/profilepicture.jpg"
+                  class="avatar"
+                  alt="Avatar" />
+                Rina Sao <b class="caret"></b
+              ></a>
+              <!-- https://lh5.googleusercontent.com/-b0-k99FZlyE/AAAAAAAAAAI/AAAAAAAAAAA/eu7opA4byxI/photo.jpg?sz=120 -->
+              <div class="dropdown-menu">
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-user" aria-hidden="true"></i> Profile</a
+                >
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-calendar-o"></i> Calendar</a
+                >
+                <a href="#" class="dropdown-item"
+                  ><i class="fa fa-sliders"></i> Settings</a
+                >
+                <div class="divider dropdown-divider"></div>
+                <a href="index.html" class="dropdown-item"
+                  ><i class="material-icons">&#xE8AC;</i> Logout</a
+                >
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </nav>
+    <div class="innerpage-bg">
+      <h2
+        style="
+          text-align: center;
+          color: #fff;
+          font-size: 40px;
+          text-transform: uppercase;
+        "
+      >
+        Admission Form 2020-21
+      </h2>
     </div>
-</body>
 
+    <div style="position: relative; margin-top: -150px">
+      <div class="container upstrip">
+        <br />
+        <form
+          data-toggle="validator"
+          name="form1"
+          method="POST"
+          onSubmit="return validateEducation(this.form)"
+        >
+
+
+          <div class="form-group">
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <!-- <input
+                    type="file"
+                    class="custom-file-input"
+                    accept="image/*"
+                    class="file"
+                    onchange="loadFile(event)"
+                    name="photo"
+                    multiple
+                  /> -->
+                  <input
+                  type="file"
+                  class="custom-file-input"
+                  accept="image/*"
+                  class="file"
+                  onchange="loadFile(event)"
+                  name="photo"
+                />
+                  <label class="custom-file-label" for="file"
+                    >Upload Photo...</label
+                  >
+                </div>
+                <p><img id="profileimage" width="200" height="100"/></p>
+                <!-- <p><img id="photo" width="200" height="100"/></p> -->
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    accept="image/*"
+                    class="file"
+                    onchange="uploadSignature(event)"
+                    name="signature"
+                  />
+                  <label class="custom-file-label" for="file"
+                    >Upload Signature...</label
+                  >
+                </div>
+                <p><img id="signature" width="200" height="100" /></p>
+              </div>
+            </div>
+            <h5>Education Details:</h5>
+            <h6>Class 10th</h6>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <select class="form-control" id="sscboard">
+                    <option>Board</option>
+                    <option
+                      value="Board of School Education Uttarakhand, Nainital"
+                    >
+                      Board of School Education Uttarakhand, Nainital
+                    </option>
+                    <option
+                      value="Board of Secondary Education Andhra Pradesh, Hyderabad "
+                    >
+                      Board of Secondary Education Andhra Pradesh, Hyderabad
+                    </option>
+                    <option
+                      value="Board of Secondary Education Rajasthan, Ajmer"
+                    >
+                      Board of Secondary Education Rajasthan, Ajmer
+                    </option>
+                    <option
+                      value="Board of Secondary Education, Madhya Pradesh, Bhopal"
+                    >
+                      Board of Secondary Education, Madhya Pradesh, Bhopal
+                    </option>
+                    <option value="Central Agricultural University, Manipur ">
+                      Central Agricultural University, Manipur
+                    </option>
+                    <option value="Central Board of Secondary Education, Delhi">
+                      Central Board of Secondary Education, Delhi
+                    </option>
+                    <option value="Central University of Bihar, Patna">
+                      Central University of Bihar, Patna
+                    </option>
+                    <option
+                      value="Central Institute of Fisheries Education, Mumbai"
+                    >
+                      Central Institute of Fisheries Education, Mumbai
+                    </option>
+                    <option value="Savitribai Phule Pune University">
+                      Savitribai Phule Pune University
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    id="sscsub"
+                    placeholder="Subject "
+                    name="subject"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-calendar icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    id="sscpass"
+                    onfocus="(this.type='date')"
+                    placeholder="Year of passing"
+                    name="passingYear"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    id="sscmarks"
+                    placeholder="Marks"
+                    onKeyPress="if(this.value > 100 || this.value < 0) return false; "
+                    name="marks"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    id="sscper"
+                    placeholder="%"
+                    name="percentage"
+                    onKeyPress="if(this.value > 100 || this.value < 0) return false; "
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                    <input type="file" class="custom-file-input" accept="image/gif, image/jpeg, image/png" class="file"
+                        onchange="uploadTenth(event)" name="tenth">
+                    <label class="custom-file-label" for="file" >Upload 10th documnet...</label>
+                </div>
+                <p><img id="tenth" width="200" height="100"  /></p>
+
+                <!-- <div class="input-container">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    name="tenthDocumnet"
+                  />
+                  <label class="custom-file-label" for="tenthDocumnet"
+                    >Upload 10th documnet...</label
+                  >
+                </div> -->
+              </div>
+            </div>
+            <h6>Class 12th</h6>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <select class="form-control" id="board2">
+                    <option>Board</option>
+                    <option
+                      value="Board of School Education Uttarakhand, Nainital"
+                    >
+                      Board of School Education Uttarakhand, Nainital
+                    </option>
+                    <option
+                      value="Board of Secondary Education Andhra Pradesh, Hyderabad "
+                    >
+                      Board of Secondary Education Andhra Pradesh, Hyderabad
+                    </option>
+                    <option
+                      value="Board of Secondary Education Rajasthan, Ajmer"
+                    >
+                      Board of Secondary Education Rajasthan, Ajmer
+                    </option>
+                    <option
+                      value="Board of Secondary Education, Madhya Pradesh, Bhopal"
+                    >
+                      Board of Secondary Education, Madhya Pradesh, Bhopal
+                    </option>
+                    <option value="Central Agricultural University, Manipur ">
+                      Central Agricultural University, Manipur
+                    </option>
+                    <option value="Central Board of Secondary Education, Delhi">
+                      Central Board of Secondary Education, Delhi
+                    </option>
+                    <option value="Central University of Bihar, Patna">
+                      Central University of Bihar, Patna
+                    </option>
+                    <option
+                      value="Central Institute of Fisheries Education, Mumbai"
+                    >
+                      Central Institute of Fisheries Education, Mumbai
+                    </option>
+                    <option value="Savitribai Phule Pune University">
+                      Savitribai Phule Pune University
+                    </option>
+                  </select>
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    id="intersub"
+                    placeholder="Subject "
+                    name="subject"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-calendar icon"></i>
+                  <input
+                    class="input-field"
+                    type="text"
+                    id="interpass"
+                    onfocus="(this.type='date')"
+                    placeholder="Year of passing"
+                    name="passingYear"
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    id="intermarks"
+                    placeholder="Marks"
+                    name="marks"
+                    onKeyPress="if(this.value > 100 || this.value < 0) return false; "
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-user icon"></i>
+                  <input
+                    class="input-field"
+                    type="number"
+                    id="interper"
+                    placeholder="%"
+                    name="percentage"
+                    onKeyPress="if(this.value > 100 || this.value < 0) return false; "
+                  />
+                </div>
+              </div>
+              <div class="col">
+                <!-- <div class="input-container">
+                  <input
+                    type="file"
+                    class="custom-file-input"
+                    name="tenthDocumnet"
+                  />
+                  <label class="custom-file-label" for="tenthDocumnet"
+                    >Upload 12th documnet...</label
+                  >
+                </div> -->
+
+                <div class="input-container">
+                    <input type="file" class="custom-file-input" accept="image/*" class="file"
+                       onchange="uploadTwelth(event)" name="twelth">
+                   <label class="custom-file-label" for="file" >Upload 12th documnet...</label>
+               </div>
+               <p><img id="twelth" width="200" height="100"/></p>
+
+              </div>
+            </div>
+            <br />
+            <h5>Payment Gateway:</h5>
+            <div class="row">
+              <div class="col">
+                <img src="images/payment.png" width="450px" />
+              </div>
+              <div class="col">
+                <div class="input-container">
+                  <i class="fa fa-envelope icon"></i>
+                  <input
+                  id="transactionId"
+                    class="input-field"
+                    type="text"
+                    placeholder="Transaction Id"
+                    name="transactionId"
+                  />
+                </div>
+              </div>
+            </div>
+            <br />
+            <div class="row">
+              <div class="col">
+                <div align="center">
+                  <button type="submit" class="btn btn-primary btn-xs">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </div>
+            <br />
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <div class="container bottom_border">
+        <div class="row">
+          <div class="col-sm-4 col-md col-sm-4 col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">
+              <a href="#" class="navbar-brand"
+                ><img class="brandl" src="images/logo.png" width="130"
+              /></a>
+            </h5>
+            <!--headin5_amrc-->
+            <p class="mb10">
+              Lorem Ipsum is simply dummy text of the printing and typesetting
+              industry. Lorem Ipsum has been the industry's standard dummy text
+              ever since the 1500s
+            </p>
+            <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35</p>
+            <p><i class="fa fa-phone"></i> +91-9898989898</p>
+            <p><i class="fa fa fa-envelope"></i> info@educat.com</p>
+          </div>
+
+          <div class="col-sm-4 col-md col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>
+            <!--headin5_amrc-->
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Accomodation</a></li>
+              <li><a href="#">Current Students Login</a></li>
+              <li><a href="#">Faculty Webmail</a></li>
+              <li><a href="#">Connect Alumni</a></li>
+              <li><a href="#">International Students</a></li>
+              <li><a href="#">Entrance Tests</a></li>
+              <li><a href="#">Photo Gallery</a></li>
+              <li><a href="#">Video Gallery</a></li>
+              <li><a href="#">Press & Media</a></li>
+            </ul>
+            <!--footer_ul_amrc ends here-->
+          </div>
+
+          <div class="col-sm-4 col-md col-6 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">
+              Faculties & Departments
+            </h5>
+            <!--headin5_amrc-->
+            <ul class="footer_ul_amrc">
+              <li><a href="#">Bio-Technology</a></li>
+              <li><a href="#">Research</a></li>
+              <li><a href="#">Architecture</a></li>
+              <li><a href="#">Hotel Management</a></li>
+              <li><a href="#">Fine Arts</a></li>
+              <li><a href="#">Photography</a></li>
+              <li><a href="#">Agriculture</a></li>
+              <li><a href="#">Computer Applications</a></li>
+              <li><a href="#">Hospital Administration</a></li>
+            </ul>
+            <!--footer_ul_amrc ends here-->
+          </div>
+
+          <div class="col-sm-4 col-md col-12 col">
+            <h5 class="headin5_amrc col_white_amrc pt2">Newsletter</h5>
+            <!--headin5_amrc ends here-->
+            <p>Sign up to update with our latest news and courses.</p>
+            <br />
+            <div class="input-group">
+              <input
+                type="email"
+                class="form-control"
+                placeholder="Enter your email"
+              />
+            </div>
+            <br />
+            <button
+              class="btn"
+              style="width: 60%; font-size: 14px"
+              type="submit"
+            >
+              Subscribe Now
+            </button>
+            <br />
+            <br />
+            <p>Your email is safe with us. We won't spam.</p>
+            <!--footer_ul2_amrc ends here-->
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <ul class="foote_bottom_ul_amrc">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Academics</a></li>
+          <li><a href="#">Research</a></li>
+          <li><a href="#">Administration</a></li>
+          <li><a href="#">E-Learning</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+        <!--foote_bottom_ul_amrc ends here-->
+        <p class="text-center">
+          Copyright @2020 | Designed With by
+          <a href="#" style="color: #86bc42">HCL Technologies Ltd.</a>
+        </p>
+
+        <ul class="social_footer_ul">
+          <li>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+        </ul>
+        <!--social_footer_ul ends here-->
+      </div>
+    </footer>
+  </body>
 </html>

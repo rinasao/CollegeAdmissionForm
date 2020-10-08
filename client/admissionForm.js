@@ -1,8 +1,38 @@
-var loadFile = function (event) {
-  var photo = document.getElementById("photo");
-  photo.src = URL.createObjectURL(event.target.files[0]);
-  console.log(photo.src, "event.target", event.target);
-};
+// var loadFile = function (event) {
+//   var photo = document.getElementById("photo");
+//   photo.src = URL.createObjectURL(event.target.files[0]);
+//   console.log("src ",photo.src, "event", event);
+// };
+var imageFile;
+function loadFile(event) {
+  console.log(".............", event.target.files);
+  let myform = new FormData();
+  myform.append("profilepic", event.target.files[0]);
+  console.log("form data ready", myform);
+  fetch("http://localhost:9000/admission/upload", {
+
+
+
+  //   myform.append("photos", event.target.files);
+  // console.log("form data ready", myform);
+  // fetch("http://localhost:9000/admission/photos/upload", {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+    },
+    body: myform,
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(">>>>>>>>", data);
+      document.getElementById("profileimage").src =
+        "http://localhost:9000/uploads/" + data.filename;
+    });
+   imageFile = data.filename;
+}
+
 var uploadSignature = function (event) {
   var signature = document.getElementById("signature");
   signature.src = URL.createObjectURL(event.target.files[0]);
@@ -30,6 +60,8 @@ function validateEmail(emailField){
 
 function validate(form) {
   event.preventDefault();
+
+  let courses = document.getElementById("courses").value;
   let fName = document.getElementById("fName").value;
   let fatherName = document.getElementById("fatherName").value;
   let motherName = document.getElementById("motherName").value;
@@ -49,7 +81,10 @@ function validate(form) {
   let slct2 = document.getElementById("slct2").value;
   let zipCode = document.getElementById("zipCode").value;
 
+
+
   var admissionForm1Object = {
+    courses:courses,
     fName: fName,
     fatherName: fatherName,
     motherName: motherName,
@@ -114,7 +149,13 @@ function validateEducation(form) {
   let interper = document.getElementById("interper").value;
   let transactionId = document.getElementById("transactionId").value;
 
-  
+  let profilepic = imageFile;
+  let signaturepic = "signature";
+  let intermarksheet = "intermarksheet";
+  let sscmarksheet = "sscmarksheet";
+
+
+
   for (var i = 0; i <= 7; i++) {
     if (document.form1.elements[i].value == "") {
       var err = "Please enter " + document.form1.elements[i].name;
@@ -126,25 +167,29 @@ function validateEducation(form) {
   }
 
   var admissionForm2Object = {
-    sscboard: board1,
-    sscsubject: sscspec,
-    sscpassout: sscpass,
-    sscmarks: sscmarks,
-    sscpercentage: sscper,
-    interboard: board2,
-    intersubject: interspec,
-    interpassout: interpass,
-    intermarks: intermarks,
-    interpercentage: interper,
-    photo: photo.src,
-    signature: signature.src,
-    twelth: twelth.src,
-    tenth: tenth.src,
-    transactionId:transactionId
+    sscBoard: board1,
+    sscSubject: sscspec,
+    sscPassout: sscpass,
+    sscMarks: sscmarks,
+    sscPercentage: sscper,
+    interBoard: board2,
+    interSubject: interspec,
+    interPassout: interpass,
+    interMarks: intermarks,
+    interPercentage: interper,
+    // photo: photo.src,
+    // signature: signature.src,
+    // twelth: twelth.src,
+    // tenth: tenth.src,
+    transactionId: transactionId,
+    profilePic:profilepic,
+    signaturePic:signaturepic,
+    interMarksheet:intermarksheet,
+    sscMarksheet:sscmarksheet,
   };
 
   console.log(admissionForm2Object);
-  localStorage.removeItem("form2List");
+  // localStorage.removeItem("form2List");
 
   let form2List = JSON.parse(localStorage.getItem("form1List") || "[]");
   form2List.push(admissionForm2Object);
@@ -152,33 +197,37 @@ function validateEducation(form) {
   localStorage.setItem("form2List", JSON.stringify(form2List));
   var admissionFormAllDetails = {
     ...form2List[0],
-    ...form2List[1]
-};
+    ...form2List[1],
+  };
 
-console.log("admissionFormAllDetails", admissionFormAllDetails)
+  console.log("admissionFormAllDetails", admissionFormAllDetails);
 
-fetch('http://localhost:9000/admission/addAdmissionFormDetails', {
-        method: 'post',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(admissionFormAllDetails)
-      }).then(function (response) {
-        return response.json()
-      }).then(function (data) {
-        console.log(">>>>>>>>>>", data)
-        alert(data.message);
-        // if(data.message == "User registered Successfully"){
-        // alert(data.message);
-        //   window.location="http://localhost:9000/signin.html"
-        // }
-        // else{
-        // alert(data.message);
-        //   return false;
-        // }
+  fetch("http://localhost:9000/admission/addAdmissionFormDetails", {
+    method: "post",
+    headers: {
+      Accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(admissionFormAllDetails),
+  })
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(">>>>>>>>>>", data);
+      alert(data.message);
+      localStorage.removeItem("form2List");
+      localStorage.removeItem("form1List");
 
-      })
+      // if(data.message == "User registered Successfully"){
+      // alert(data.message);
+      //   window.location="http://localhost:9000/signin.html"
+      // }
+      // else{
+      // alert(data.message);
+      //   return false;
+      // }
+    });
 
   return true;
 }

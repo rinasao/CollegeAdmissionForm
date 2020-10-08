@@ -28,7 +28,7 @@
       integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
       crossorigin="anonymous"
     />
-    <script src="js/admissionForm.js"></script>
+    <script src="admissionForm.js"></script>
   </head>
 
   <body>
@@ -128,9 +128,9 @@
         <br />
         <form
           data-toggle="validator"
-          action="admission-form2.html"
           name="forms"
           onSubmit="return validate(this.form)"
+          method="POST"
         >
           <div class="form-group">
             <div class="row">
@@ -138,11 +138,11 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="fName"
                     class="input-field"
                     type="text"
                     placeholder="Student Name"
-                    name="firstName"
-                    required
+                    name="First Name"
                   />
                   <!-- <span class="errorname">    </span> -->
                 </div>
@@ -151,11 +151,11 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="fatherName"
                     class="input-field"
                     type="text"
                     placeholder="Father's Name"
-                    name="fatherName"
-                    required
+                    name="Father Name"
                     aria-required="true"
                   />
                 </div>
@@ -167,11 +167,11 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="motherName"
                     class="input-field"
                     type="text"
                     placeholder="Mother's Name"
-                    name="motherName"
-                    required
+                    name="Mother Name"
                     aria-required="true"
                   />
                 </div>
@@ -182,10 +182,10 @@
                   <input
                     class="input-field"
                     type="number"
+                    id="mobileNumber"
                     onKeyPress="if(this.value.length==10) return false;"
                     placeholder="Student's Mobile No."
-                    name="studentMobile"
-                    required
+                    name="Student Mobile Number"
                     aria-required="true"
                   />
                 </div>
@@ -197,11 +197,12 @@
                 <div class="input-container">
                   <i class="fa fa-phone-square icon"></i>
                   <input
+                  id="fatherMobileNumber"
                     class="input-field"
                     type="number"
                     onKeyPress="if(this.value.length==10) return false;"
                     placeholder="Father's Mobile No."
-                    name="fatherMobile"
+                    name="Father's Mobile No."
                   />
                 </div>
               </div>
@@ -209,11 +210,11 @@
                 <div class="input-container">
                   <i class="fa fa-envelope icon"></i>
                   <input
+                  id="email"
                     class="form-control"
                     type="email"
                     placeholder="Email Id"
-                    name="emailId"
-                    required
+                    name="Email Id"
                     aria-required="true"
                   />
                   <div class="help-block with-errors"></div>
@@ -226,12 +227,12 @@
                 <div class="input-container">
                   <i class="fa fa-calendar icon"></i>
                   <input
+                  id="dob"
                     class="input-field"
                     type="text"
                     onfocus="(this.type='date')"
                     placeholder="Date of Birth"
-                    name="birthDate"
-                    required
+                    name="Birth Date"
                     aria-required="true"
                   />
                 </div>
@@ -240,12 +241,12 @@
                 <div class="input-container">
                   <i class="fa fa-id-card icon"></i>
                   <input
+                  id="aadharCardNo"
                     class="input-field"
                     type="number"
                     onKeyPress="if(this.value.length==12) return false;"
                     placeholder="Aadhaar Card No."
-                    name="adhaarCardNo"
-                    required
+                    name="Adhaar CardNo"
                     aria-required="true"
                   />
                 </div>
@@ -257,17 +258,18 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="birthPlace"
                     class="input-field"
                     type="text"
                     placeholder="Place of Birth "
-                    name="placeBirth"
+                    name="Birth Place"
                   />
                 </div>
               </div>
               <div class="col">
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
-                  <select class="form-control" required aria-required="true">
+                  <select id = "gender" class="form-control" required aria-required="true">
                     <option>Select Gender</option>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
@@ -280,7 +282,7 @@
               <div class="col">
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
-                  <select class="form-control">
+                  <select id="religion" class="form-control">
                     <option>Select Religion</option>
                     <option value="40">Buddhist</option>
                     <option value="31">Christian-Catholic</option>
@@ -305,7 +307,7 @@
               <div class="col">
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
-                  <select class="form-control">
+                  <select id="category" class="form-control">
                     <option>Select Category</option>
                     <option value="OPEN">OPEN</option>
                     <option value="Sikhism">OBC</option>
@@ -323,6 +325,7 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="cast"
                     class="input-field"
                     type="text"
                     placeholder="Cast "
@@ -334,10 +337,11 @@
                 <div class="input-container">
                   <i class="fa fa-user icon"></i>
                   <input
+                  id="motherTongue"
                     class="input-field"
                     type="text"
                     placeholder="Mother's Tongue"
-                    name="motherTongue"
+                    name="Mother Tongue"
                   />
                 </div>
               </div>
@@ -347,7 +351,7 @@
               <div class="col">
                 <div class="input-container">
                   <i class="fa fa-map-marker icon"></i>
-                  <textarea style="width: 100%" rows="6" placeholder="Address">
+                  <textarea style="width: 100%" rows="6" id="address" placeholder="Address">
                   </textarea>
                 </div>
               </div>
@@ -397,13 +401,14 @@
                 <div class="input-container">
                   <i class="fa fa-map-marker icon"></i>
                   <input
+                  id="zipCode"
                     class="input-field"
                     type="tel"
                     pattern="[0-9]*"
                     placeholder="Zip Code"
                     onKeyPress="if(this.value.length==6) return false; "
-                    required
                     aria-required="true"
+                    name="Zip Code"
                   />
                 </div>
               </div>
